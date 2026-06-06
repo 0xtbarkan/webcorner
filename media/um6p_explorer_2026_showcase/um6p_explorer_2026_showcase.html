@@ -4,15 +4,16 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>Khalid BARKAN - UM6P Explorer 2026 Showcase</title>
-  <meta name="description" content="Photos and moments from the UM6P Explorer 2026 Showcase - captured by Khalid BARKAN. Panels, people, and tech highlights.">
+  <!-- seo stuff -->
+  <title>Khalid BARKAN — UM6P Explorer 2026 Showcase</title>
+  <meta name="description" content="Photos and moments from the UM6P Explorer 2026 Showcase — captured by Khalid BARKAN. Panels, people, and tech highlights.">
   <meta name="author" content="Khalid BARKAN">
   <meta name="robots" content="index, follow">
-  <link rel="canonical" href="https://barkancorner.me/media/um6p_explorer_2026_showcase.html">
+  <link rel="canonical" href="https://barkancorner.me/media/um6p_explorer_2026_showcase/um6p_explorer_2026_showcase.html">
 
-  <!-- open graph-->
+  <!-- open graph -->
   <meta property="og:type" content="website">
-  <meta property="og:url" content="https://barkancorner.me/media/um6p_explorer_2026_showcase.html">
+  <meta property="og:url" content="https://barkancorner.me/media/um6p_explorer_2026_showcase/um6p_explorer_2026_showcase.html">
   <meta property="og:title" content="Khalid BARKAN — UM6P Explorer 2026 Showcase">
   <meta property="og:description" content="Photos and moments from the UM6P Explorer 2026 Showcase. Panels, people, and tech highlights.">
   <meta property="og:image" content="https://barkancorner.me/media/um6p_explorer_2026_showcase/8.jpg">
@@ -21,12 +22,12 @@
 
   <!-- twitter card -->
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:url" content="https://barkancorner.me/media/um6p_explorer_2026_showcase.html">
+  <meta name="twitter:url" content="https://barkancorner.me/media/um6p_explorer_2026_showcase/um6p_explorer_2026_showcase.html">
   <meta name="twitter:title" content="Khalid BARKAN — UM6P Explorer 2026 Showcase">
   <meta name="twitter:description" content="Photos and moments from the UM6P Explorer 2026 Showcase. Panels, people, and tech highlights.">
   <meta name="twitter:image" content="https://barkancorner.me/media/um6p_explorer_2026_showcase/8.jpg">
 
-  <link rel="stylesheet" href="../front_logic/styles.css">
+  <link rel="stylesheet" href="../../front_logic/styles.css">
   <style>
     body {
       background: var(--bg-primary);
@@ -58,7 +59,9 @@
       align-items: center;
       gap: 6px;
     }
-    .nav-home:hover { color: var(--accent-yellow); }
+    .nav-home:hover {
+      color: var(--accent-yellow);
+    }
     .theme-toggle-simple {
       cursor: pointer;
       background: var(--bg-card);
@@ -102,7 +105,9 @@
       filter: grayscale(15%);
       transition: filter 0.2s;
     }
-    .gallery-item:hover img { filter: grayscale(0%); }
+    .gallery-item:hover img {
+      filter: grayscale(0%);
+    }
     .image-caption {
       padding: 8px 10px;
       font-size: 11px;
@@ -123,7 +128,10 @@
       font-size: 13px;
       margin-bottom: 8px;
     }
-    hr { margin: 24px 0; border-color: var(--border-3); }
+    hr {
+      margin: 24px 0;
+      border-color: var(--border-3);
+    }
     .footer-note {
       text-align: center;
       margin-top: 48px;
@@ -132,7 +140,7 @@
       border-top: 1px solid var(--border-3);
       padding-top: 24px;
     }
-
+    /* lightbox */
     #lightbox {
       display: none;
       position: fixed;
@@ -168,17 +176,17 @@
 
 <div class="gallery-page">
   <div class="gallery-nav">
-    <a href="../index.html" class="nav-home">[ HOME ]</a>
+    <a href="../../index.html" class="nav-home">[ HOME ]</a>
     <button id="theme-toggle-btn" class="theme-toggle-simple">[ DARK / LIGHT ]</button>
   </div>
 
   <div class="gallery-header">
     <h1>UM6P Explorer 2026 Showcase</h1>
-    <p> Benguerir Morocco | May 8th | moments, panels, people & tech</p>
+    <p> Benguerir, Morocco  |  May 8th, 2026  |  moments, panels, people & tech</p>
   </div>
 
   <div id="gallery-container" class="gallery-grid">
-    <div style="text-align:center;padding:40px;color:var(--text-muted);">loading gallery ...</div>
+    <div style="text-align: center; padding: 40px; color: var(--text-muted);">loading gallery ...</div>
   </div>
 
   <div class="footer-note">
@@ -193,19 +201,19 @@
 
 <script>
   const localImages = [
-    "um6p_explorer_2026_showcase/1.jpg",
-    "um6p_explorer_2026_showcase/2.jpg",
-    "um6p_explorer_2026_showcase/3.jpg",
-    "um6p_explorer_2026_showcase/4.jpg",
-    "um6p_explorer_2026_showcase/5.jpg",
-    "um6p_explorer_2026_showcase/6.jpeg",
-    "um6p_explorer_2026_showcase/7.jpeg",
-    "um6p_explorer_2026_showcase/8.jpeg",
-    "um6p_explorer_2026_showcase/9.jpeg",
-    "um6p_explorer_2026_showcase/10.jpeg",
-    "um6p_explorer_2026_showcase/11.jpeg",
-    "um6p_explorer_2026_showcase/12.jpeg",
-    "um6p_explorer_2026_showcase/13.jpeg",
+    "1.jpg",
+    "2.jpg",
+    "3.jpg",
+    "4.jpg",
+    "5.jpg",
+    "6.jpeg",
+    "7.jpeg",
+    "8.jpeg",
+    "9.jpeg",
+    "10.jpeg",
+    "11.jpeg",
+    "12.jpeg",
+    "13.jpeg",
   ];
 
   function shuffleArray(arr) {
@@ -222,29 +230,27 @@
     if (!container) return;
 
     const shuffled = shuffleArray(localImages);
-    let html = '';
 
+    let html = '';
     for (const src of shuffled) {
-      const label = src.split('/').pop(); // e.g. "1.jpg"
       html += `
         <div class="gallery-item">
           <a class="lightbox-trigger" href="${src}" data-src="${src}">
             <img src="${src}" alt="UM6P Explorer 2026 Showcase moment" loading="lazy"
                  onerror="this.parentElement.parentElement.style.display='none'">
-            <div class="image-caption">[ ${label} ]</div>
+            <div class="image-caption">[ click to view full size ]</div>
           </a>
         </div>
       `;
     }
-
     container.innerHTML = html;
     attachLightbox();
   }
 
   function attachLightbox() {
-    const lightbox   = document.getElementById('lightbox');
+    const lightbox    = document.getElementById('lightbox');
     const lightboxImg = document.getElementById('lightbox-img');
-    const closeBtn   = document.getElementById('lightbox-close');
+    const closeBtn    = document.getElementById('lightbox-close');
 
     document.querySelectorAll('.lightbox-trigger').forEach(link => {
       link.addEventListener('click', e => {
@@ -273,19 +279,29 @@
     if (!btn) return;
 
     const applyTheme = (isLight) => {
-      document.body.classList.toggle('light', isLight);
+      if (isLight) {
+        document.body.classList.add('light');
+      } else {
+        document.body.classList.remove('light');
+      }
       localStorage.setItem('gallery-theme', isLight ? 'light' : 'dark');
     };
 
     const saved = localStorage.getItem('gallery-theme');
-    if (saved) {
-      applyTheme(saved === 'light');
+    if (saved === 'light') {
+      applyTheme(true);
+    } else if (saved === 'dark') {
+      applyTheme(false);
     } else {
-      applyTheme(window.matchMedia('(prefers-color-scheme: light)').matches);
+      const prefersLight = window.matchMedia('(prefers-color-scheme: light)').matches;
+      if (prefersLight && localStorage.getItem('gallery-theme') === null) {
+        applyTheme(true);
+      }
     }
 
     btn.addEventListener('click', () => {
-      applyTheme(!document.body.classList.contains('light'));
+      const isLight = document.body.classList.contains('light');
+      applyTheme(!isLight);
     });
   }
 
