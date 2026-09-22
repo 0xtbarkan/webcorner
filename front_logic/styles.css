@@ -74,7 +74,7 @@ body {
 }
 
 /*
->? TOPBAR [sticky header bar with links, search, theme switch]
+>? TOPBAR [sticky header bar with links, theme switch]
 */
 #topbar {
   background-color: var(--bg-secondary);
@@ -121,36 +121,6 @@ body {
 
 #social-links a:hover {
   color: var(--accent-yellow);
-}
-
-/*
->? SEARCH BUTTON [the topbar search trigger with Ctrl+K hint]
-*/
-#search-trigger {
-  background: none;
-  border: 1px solid var(--border-1);
-  color: var(--text-muted);
-  font-family: "Courier New", Courier, monospace;
-  font-size: 12px;
-  padding: 3px 10px;
-  cursor: pointer;
-  letter-spacing: 1px;
-  display: flex;
-  align-items: center;
-  gap: 6px;
-  transition: color 0.15s, border-color 0.15s;
-}
-
-#search-trigger:hover {
-  color: var(--accent-green);
-  border-color: var(--accent-green);
-}
-
-#search-trigger .search-kbd {
-  color: var(--text-faint);
-  font-size: 10px;
-  border: 1px solid var(--border-1);
-  padding: 1px 4px;
 }
 
 /*
@@ -264,30 +234,6 @@ body.light .switch-knob {
   background-color: var(--bg-hover);
   border-left-color: var(--accent-yellow);
 }
-
-/*
->? SIDEBAR META [the key-value info block at the bottom of the sidebar]
-*/
-.toc-status {
-  display: block;
-  padding: 18px 16px 10px 16px;
-  color: var(--text-ghost);
-  font-size: 10px;
-  letter-spacing: 3px;
-  border-top: 1px solid var(--border-3);
-  margin-top: 10px;
-}
-
-.toc-meta-item {
-  display: block;
-  color: var(--text-faint);
-  font-size: 11px;
-  padding: 3px 16px 3px 22px;
-  letter-spacing: 0.5px;
-  line-height: 1.8;
-}
-
-.toc-meta-item::before { content: "├─ "; color: var(--border-1); }
 
 /*
 >? MAIN AREA [right scrollable content column]
@@ -532,193 +478,6 @@ a:hover { color: var(--accent-yellow); }
 }
 
 /*
->? LOOKUP OVERLAY [the Ctrl+K search modal -- backdrop + modal box]
-*/
-#lookup-overlay {
-  display: none;
-  position: fixed;
-  top: 0; left: 0;
-  width: 100%; height: 100%;
-  z-index: 8000;
-  align-items: flex-start;
-  justify-content: center;
-  padding-top: 80px;
-  box-sizing: border-box;
-}
-
-#lookup-overlay.active { display: flex; }
-
-#lookup-backdrop {
-  position: absolute;
-  top: 0; left: 0;
-  width: 100%; height: 100%;
-  background: rgba(0, 0, 0, 0.75);
-  cursor: pointer;
-}
-
-#lookup-modal {
-  position: relative;
-  z-index: 1;
-  width: 600px;
-  max-width: 92vw;
-  background: var(--bg-secondary);
-  border: 1px solid var(--border-1);
-  box-shadow: 0 0 0 1px var(--border-1), 0 30px 80px rgba(0,0,0,0.6), 0 0 40px rgba(0,255,0,0.05);
-}
-
-#lookup-header {
-  display: flex;
-  align-items: center;
-  padding: 12px 16px;
-  border-bottom: 1px solid var(--border-1);
-  gap: 10px;
-}
-
-#lookup-icon { color: var(--accent-green); font-size: 16px; flex-shrink: 0; }
-
-#lookup-input {
-  flex: 1;
-  background: transparent;
-  border: none;
-  outline: none;
-  color: var(--text-primary);
-  font-family: "Courier New", Courier, monospace;
-  font-size: 14px;
-  letter-spacing: 0.5px;
-  caret-color: var(--accent-green);
-}
-
-#lookup-input::placeholder { color: var(--text-faint); }
-
-#lookup-esc-tag {
-  color: var(--text-muted);
-  font-size: 10px;
-  border: 1px solid var(--border-1);
-  padding: 2px 7px;
-  letter-spacing: 1.5px;
-  cursor: pointer;
-  flex-shrink: 0;
-  font-family: "Courier New", Courier, monospace;
-  transition: color 0.1s, border-color 0.1s;
-}
-
-#lookup-esc-tag:hover { color: var(--accent-yellow); border-color: var(--accent-yellow); }
-
-/*
->? LOOKUP RESULTS [the scrollable list of matched items]
-*/
-#lookup-results { max-height: 360px; overflow-y: auto; }
-
-#lookup-results::-webkit-scrollbar       { width: 4px; }
-#lookup-results::-webkit-scrollbar-track { background: transparent; }
-#lookup-results::-webkit-scrollbar-thumb { background: var(--border-1); }
-
-.lk-result {
-  display: flex;
-  align-items: flex-start;
-  padding: 10px 14px;
-  cursor: pointer;
-  border-bottom: 1px solid var(--border-3);
-  gap: 10px;
-  transition: background-color 0.08s;
-}
-
-.lk-result:last-child             { border-bottom: none; }
-.lk-result:hover,
-.lk-result.lk-selected           { background-color: var(--bg-hover); }
-.lk-result.lk-selected .lk-arrow { color: var(--accent-green); }
-
-.lk-tag {
-  font-size: 10px;
-  letter-spacing: 1.5px;
-  padding: 2px 6px;
-  border: 1px solid;
-  margin-top: 2px;
-  flex-shrink: 0;
-  min-width: 52px;
-  text-align: center;
-  font-family: "Courier New", Courier, monospace;
-}
-
-.lk-tag-section { color: var(--accent-yellow); border-color: var(--accent-yellow); }
-.lk-tag-item    { color: var(--accent-cyan);   border-color: var(--accent-cyan);   }
-
-.lk-text { flex: 1; min-width: 0; }
-
-.lk-label {
-  color: var(--text-primary);
-  font-size: 13px;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-}
-
-.lk-label mark {
-  background: transparent;
-  color: var(--accent-yellow);
-  font-weight: bold;
-  text-decoration: underline;
-  text-decoration-color: var(--accent-yellow);
-  text-underline-offset: 2px;
-}
-
-.lk-sublabel {
-  color: var(--text-faint);
-  font-size: 11px;
-  margin-top: 3px;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-}
-
-.lk-arrow {
-  color: var(--border-1);
-  font-size: 13px;
-  flex-shrink: 0;
-  align-self: center;
-  transition: color 0.1s;
-}
-
-.lk-empty {
-  padding: 28px;
-  text-align: center;
-  color: var(--text-muted);
-  letter-spacing: 2px;
-  font-size: 12px;
-}
-
-/*
->? LOOKUP FOOTER [keyboard shortcut hints at the bottom of the modal]
-*/
-#lookup-footer {
-  display: flex;
-  gap: 14px;
-  padding: 7px 14px;
-  border-top: 1px solid var(--border-3);
-  align-items: center;
-  flex-wrap: wrap;
-}
-
-.lk-hint {
-  color: var(--text-muted);
-  font-size: 11px;
-  display: flex;
-  align-items: center;
-  gap: 3px;
-}
-
-.lk-hint kbd {
-  font-family: "Courier New", Courier, monospace;
-  background: var(--bg-hover);
-  border: 1px solid var(--border-1);
-  padding: 1px 4px;
-  font-size: 10px;
-  color: var(--text-dim);
-}
-
-.lk-hint-right { margin-left: auto; }
-
-/*
 >? SUB SECTION LABEL [section titles inside pages, one level below page title]
 */
 .section-label-sub {
@@ -826,11 +585,6 @@ body.light .status-underdev { background-color: #fff5cc; color: #664400; border-
   border-radius: 4px;
 }
 
-/* Make search results selection feel more "mechanical" */
-.lk-result.lk-selected {
-  background-color: var(--bg-hover) !important;
-  border-left: 3px solid var(--accent-green);
-}
 /*
 >? RESPONSIVE [mobile & tablet breakpoints -- additive only, nothing above is changed]
 */
@@ -911,7 +665,6 @@ body.light .status-underdev { background-color: #fff5cc; color: #664400; border-
 
   /* Sidebar nav links */
   .toc-nav-link  { font-size: 15px !important; }
-  .toc-meta-item { font-size: 13px !important; }
 
   /* Topbar */
   #topbar-left   { font-size: 14px !important; }
@@ -934,10 +687,6 @@ body.light .status-underdev { background-color: #fff5cc; color: #664400; border-
 
   /* Hide social links on very small screens -- they're in the page too */
   #social-links { display: none; }
-
-  /* Shrink search button */
-  #search-trigger .search-kbd { display: none; }
-  #search-trigger { padding: 3px 8px; font-size: 12px !important; }
 
   /* Sidebar becomes a slide-in drawer */
   #sidebar {
@@ -993,7 +742,4 @@ body.light .status-underdev { background-color: #fff5cc; color: #664400; border-
   /* Nav grid: single column */
   .home-nav-grid { grid-template-columns: 1fr !important; }
 
-  /* Lookup modal */
-  #lookup-overlay { padding-top: 20px; }
-  #lookup-modal   { max-width: 96vw; }
 }
