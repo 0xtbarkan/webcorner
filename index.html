@@ -45,7 +45,7 @@
         <a class="toc-nav-link" data-page="projects">02 &gt;&gt; Projects</a>
       </div>
       <div class="toc-item-wrap">
-        <a class="toc-nav-link" data-page="blog">03 &gt;&gt; Blog</a>
+        <a class="toc-nav-link" data-page="magazine">03 &gt;&gt; Magazine</a>
       </div>
       <div class="toc-item-wrap">
         <a class="toc-nav-link" data-page="learning">04 &gt;&gt; Learning</a>
@@ -101,7 +101,7 @@
           </p>
           <p style="margin-top: 14px;">
             In my free time i do write and share my thoughts on substack, you can reach it through the link => 
-            <a href="https://xidruk.substack.com/" target="_blank">[MY SUBSTACK]</a>
+            <a href="https://tbarkan.substack.com/" target="_blank">[MY SUBSTACK]</a>
             . my writings covers different topics include: linux, math, cryptography, computer stuff ...
           </p>
         </div>
@@ -118,8 +118,8 @@
             <div class="home-nav-card-title">Projects</div>
             <div class="home-nav-card-desc">Real things I built -- garbage collectors, hash maps, ELF inspectors, and more.</div>
           </div>
-          <div class="home-nav-card" data-page="blog">
-            <div class="home-nav-card-title">Blog</div>
+          <div class="home-nav-card" data-page="magazine">
+            <div class="home-nav-card-title">Magazine</div>
             <div class="home-nav-card-desc">Writing on Substack -- math, cryptography, Linux, philosophy, and whatever else is in my head.</div>
           </div>
           <div class="home-nav-card" data-page="learning">
@@ -290,7 +290,7 @@
           </tr>
           <tr>
             <td>Substack</td>
-            <td><a href="https://xidruk.substack.com/" target="_blank">xidruk.substack.com</a></td>
+            <td><a href="https://tbarkan.substack.com/" target="_blank">tbarkan.substack.com</a></td>
           </tr>
           <tr>
             <td>TryHackMe</td>
@@ -371,9 +371,32 @@
 
       </div>
 
-      <div class="page hidden" id="page-blog">
-        <div class="section-label">[ 03 -- BLOG ]</div>
-        <p style="color: var(--text-muted); font-size: 13px; line-height: 2;">check my blog on Substack : <a href="https://xidruk.substack.com/" target="_blank" >https://xidruk.substack.com/</a></p>
+      <div class="page hidden" id="page-magazine">
+        <div class="section-label">[ 03 -- MAGAZINE ]</div>
+        <p style="color: var(--text-muted); font-size: 13px; line-height: 2; max-width: 780px;">
+          Everything I write off-repo lives here -- essays and notes published on my
+          <a href="https://tbarkan.substack.com/" target="_blank">Substack</a>, spanning
+          <a href="https://tbarkan.substack.com/s/philosophia" target="_blank">Philosophia</a>,
+          <a href="https://tbarkan.substack.com/s/linux-magicus" target="_blank">Linux Magicus</a>,
+          <a href="https://tbarkan.substack.com/s/abstract-machina" target="_blank">Abstract Machina</a> and
+          <a href="https://tbarkan.substack.com/s/quadrivium" target="_blank">Quadrivium</a>.
+          Newest first -- click a title to read the full piece on Substack.
+        </p>
+
+        <table class="data-table" id="magazine-table">
+          <thead>
+            <tr>
+              <th>Title</th>
+              <th>Category</th>
+              <th>Published</th>
+              <th>Platform</th>
+              <th>Link</th>
+            </tr>
+          </thead>
+          <tbody id="magazine-table-body">
+            <tr><td colspan="5" style="color: var(--text-muted);">Loading posts...</td></tr>
+          </tbody>
+        </table>
       </div>
 
       <div class="page hidden" id="page-learning">
@@ -718,5 +741,6 @@
   </div>
 
   <script src="front_logic/app.js"></script>
+  <script src="front_logic/magazine-loader.js"></script>
 </body>
 </html>
