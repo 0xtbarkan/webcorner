@@ -586,46 +586,6 @@ body.light .status-underdev { background-color: #fff5cc; color: #664400; border-
 }
 
 /*
->? MAGAZINE FILTERS [category + date sort controls above the magazine table]
-*/
-.magazine-filters {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 24px;
-  align-items: flex-end;
-  margin: 20px 0 24px 0;
-  padding-bottom: 16px;
-  border-bottom: 1px solid var(--border-3);
-}
-
-.magazine-filter-label {
-  display: flex;
-  flex-direction: column;
-  gap: 6px;
-  color: var(--text-faint);
-  font-size: 10px;
-  letter-spacing: 2px;
-  text-transform: uppercase;
-}
-
-.magazine-filter-label select {
-  background: var(--bg-card);
-  border: 1px solid var(--border-1);
-  color: var(--text-primary);
-  font-family: "Courier New", Courier, monospace;
-  font-size: 13px;
-  padding: 6px 10px;
-  cursor: pointer;
-  min-width: 180px;
-}
-
-.magazine-filter-label select:hover,
-.magazine-filter-label select:focus {
-  border-color: var(--accent-green);
-  outline: none;
-}
-
-/*
 >? RESPONSIVE [mobile & tablet breakpoints -- additive only, nothing above is changed]
 */
 
@@ -678,10 +638,6 @@ body.light .status-underdev { background-color: #fff5cc; color: #664400; border-
 
   /* Base font size bump */
   body { font-size: 16px !important; }
-
-  /* Magazine filters */
-  .magazine-filters { flex-direction: column; align-items: stretch; gap: 14px; }
-  .magazine-filter-label select { min-width: 0; width: 100%; }
 
   /* Section labels */
   .section-label     { font-size: 15px !important; }
